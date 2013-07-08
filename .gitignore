@@ -4,6 +4,11 @@
 *.jar
 *.war
 *.ear
+
 # Generated Files
 .classpath
 .project
+
+# Build management files
+build/*
+.gradle/*
