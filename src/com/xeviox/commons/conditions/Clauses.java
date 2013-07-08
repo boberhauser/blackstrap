@@ -1,5 +1,7 @@
 package com.xeviox.commons.conditions;
 
+import java.lang.reflect.InvocationTargetException;
+
 /*******************************************************************************
  * Copyright (c) 2013 EclipseSource and others.
  * All rights reserved. This program and the accompanying materials
@@ -9,6 +11,7 @@ package com.xeviox.commons.conditions;
  *
  * Contributors:
  *    EclipseSource  - initial API and implementation
+ *    Benjamin Pabst - further development
  ******************************************************************************/
 public final class Clauses {
 
@@ -44,6 +47,28 @@ public final class Clauses {
       }
     }
     
+    public <T extends RuntimeException> void doThrow(T rt) {
+    	throw rt;
+    }
+    
+    public void doThrow(Class<? extends RuntimeException> clazz) {
+		try {
+			throw clazz.newInstance();
+		} 
+		catch (InstantiationException | IllegalAccessException e) {
+			throw new RuntimeException(e);
+		}
+    }
+    
+    public void doThrow(Class<? extends RuntimeException> clazz, String message) {
+		try {
+			throw clazz.getDeclaredConstructor(String.class).newInstance(message);
+		} 
+		catch (InstantiationException | IllegalAccessException | NoSuchMethodException 
+				| InvocationTargetException e) {
+			throw new RuntimeException(e);
+		}
+    }
   }
 
   private static Clause TRUE_CLAUSE = new Clause(true);

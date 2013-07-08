@@ -9,6 +9,7 @@ package com.xeviox.commons.conditions;
  *
  * Contributors:
  *    EclipseSource  - initial API and implementation
+ *    Benjamin Pabst - further development
  ******************************************************************************/
 
 import static org.junit.Assert.assertEquals;
@@ -66,5 +67,25 @@ public class ClausesTest {
       assertEquals("foo", ise.getMessage());
     }
   }
-
+  
+  @Test(expected = RuntimeException.class)
+  public void testThrowCustomRuntimeException() {
+	  Clauses.when(true).doThrow(new RuntimeException("With a message."));
+  }
+  
+  @Test(expected = RuntimeException.class)
+  public void testThrowCustomRuntimeExceptionByClass() {
+	  Clauses.when(true).doThrow(RuntimeException.class);
+  }
+  
+  @Test
+  public void testThrowCustomRTEByClassWithMessage() {
+	  final String message = "With a message.";
+	  try {
+		  Clauses.when(true).doThrow(RuntimeException.class, message);
+	  }
+	  catch (RuntimeException e) {
+		  assertEquals(message, e.getMessage());
+	  }
+  }
 }
