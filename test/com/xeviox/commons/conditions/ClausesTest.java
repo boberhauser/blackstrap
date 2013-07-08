@@ -1,5 +1,3 @@
-package com.xeviox.commons.conditions;
-
 /*******************************************************************************
  * Copyright (c) 2013 EclipseSource and others.
  * All rights reserved. This program and the accompanying materials
@@ -11,6 +9,8 @@ package com.xeviox.commons.conditions;
  *    EclipseSource  - initial API and implementation
  *    Benjamin Pabst - further development
  ******************************************************************************/
+
+package com.xeviox.commons.conditions;
 
 import static org.junit.Assert.assertEquals;
 
