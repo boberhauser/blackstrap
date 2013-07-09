@@ -1,7 +1,9 @@
-xeviox-java-commons
-===================
+blackstrap
+==========
 
-Library of common classes for Java development
+`Spice up your development.`
+
+Blackstrap offers a bunch of common classes that could spice up your Java development.
 
 Build Dependencies
 ------------------
@@ -22,6 +24,8 @@ Eclipse Public License - v 1.0 (http://www.eclipse.org/legal/epl-v10.html)
 
 Kudos
 -----
+
+Kudos go to Tobias Placht for the great name and slogan!
 
 Kudos go to Holger Staudacher, Frank Appel and Moritz Post from 
 EclipseSource (http://eclipsesource.com) for the initial API and implementation of the "Clauses" 
