@@ -21,7 +21,7 @@ sourceSets {
 jar {
     manifest {
         name = 'blackstrap java library'
-        instruction 'Bundle-Vendor','unitedsoftcoders.com'
+        instruction 'Bundle-Vendor','xeviox.com'
     }
 }
 
