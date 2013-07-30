@@ -17,6 +17,12 @@ Building
 
 Library will end in `build/libs`.
 
+Eclipse Development
+-------------------
+
+`gradle eclipse` will generate necessary files to import the library as an existing
+Eclipse project.
+
 License
 -------
 
