@@ -23,6 +23,11 @@ public final class Objects {
 		return o == null ? true : false;
 	}
 	
+	@SuppressWarnings("unchecked")
+    public static <T> T unsafeCast(Object input) {
+	    return (T) input;
+	}
+	
 	// prevent instantiation
 	private Objects() { }
 }
