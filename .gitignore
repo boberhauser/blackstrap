@@ -11,6 +11,6 @@
 .settings
 
 # Build management files
-/build/*
-/.gradle/*
-/bin/*
+/build
+/.gradle
+/bin
