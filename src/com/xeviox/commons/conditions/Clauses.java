@@ -30,9 +30,21 @@ public final class Clauses {
             }
         }
 
-        public void throwIllegalState(String message) {
+        public void throwIllegalState(final String message) {
             if (condition) {
                 throw new IllegalStateException(message);
+            }
+        }
+        
+        public void throwNullPointer() {
+            if (condition) {
+                throw new NullPointerException();
+            }
+        }
+        
+        public void throwNullPointer(final String message) {
+            if (condition) {
+                throw new NullPointerException(message);
             }
         }
 
@@ -42,7 +54,7 @@ public final class Clauses {
             }
         }
 
-        public void throwIllegalArgument(String message) {
+        public void throwIllegalArgument(final String message) {
             if (condition) {
                 throw new IllegalArgumentException(message);
             }
@@ -69,7 +81,7 @@ public final class Clauses {
             }
         }
 
-        public void doThrow(Class<? extends RuntimeException> clazz, String message) {
+        public void doThrow(Class<? extends RuntimeException> clazz, final String message) {
             if (!condition) {
                 return;
             }
@@ -97,6 +109,31 @@ public final class Clauses {
 
     public static Clause whenNull(Object object) {
         return when(object == null);
+    }
+    
+    /**
+     * Performs a null check and returns the given reference.
+     * 
+     * @param reference
+     * @return reference
+     * @throws NullPointerException if reference is null.
+     */
+    public static <T> T nullChecked(final T reference) {
+        whenNull(reference).throwNullPointer();
+        return reference;
+    }
+
+    /**
+     * Performs a null check and returns the given reference.
+     * 
+     * @param reference
+     * @param message Additional message to be added to the {@link NullPointerException}.
+     * @return
+     * @throws NullPointerException if reference is null.
+     */
+    public static <T> T nullChecked(final T reference, final String message) {
+        whenNull(reference).throwNullPointer(message);
+        return reference;
     }
 
     private Clauses() {
