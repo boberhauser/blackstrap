@@ -49,10 +49,18 @@ public final class Clauses {
         }
 
         public <T extends RuntimeException> void doThrow(T rt) {
+            if (!condition) {
+                return;
+            }
+            
             throw rt;
         }
 
         public void doThrow(Class<? extends RuntimeException> clazz) {
+            if (!condition) {
+                return;
+            }
+            
             try {
                 throw clazz.newInstance();
             }
@@ -62,6 +70,10 @@ public final class Clauses {
         }
 
         public void doThrow(Class<? extends RuntimeException> clazz, String message) {
+            if (!condition) {
+                return;
+            }
+            
             try {
                 throw clazz.getDeclaredConstructor(String.class).newInstance(message);
             }
