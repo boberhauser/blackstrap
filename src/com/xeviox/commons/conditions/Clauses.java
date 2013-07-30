@@ -61,11 +61,9 @@ public final class Clauses {
         }
 
         public <T extends RuntimeException> void doThrow(T rt) {
-            if (!condition) {
-                return;
+            if (condition) {
+                throw rt;
             }
-            
-            throw rt;
         }
 
         public void doThrow(Class<? extends RuntimeException> clazz) {
