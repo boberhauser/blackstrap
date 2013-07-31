@@ -9,7 +9,7 @@
  *    Benjamin Pabst - initial API and implementation
  ******************************************************************************/
 
-package com.xeviox.commons.conditions;
+package com.xeviox.commons.functional;
 
 public interface Predicate<T> {
     /**
