@@ -9,7 +9,7 @@
  *    Benjamin Pabst - initial API and implementation
  *    Tobias Placht
  ******************************************************************************/
-package com.xeviox.commons.ui.jface.tableviewer;
+package com.xeviox.commons.ui.eclipse.jface.tableviewer;
 
 import java.util.Comparator;
 

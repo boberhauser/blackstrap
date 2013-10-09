@@ -10,7 +10,7 @@
  *    Tobias Placht  - additional funcionality
  ******************************************************************************/
 
-package com.xeviox.commons.ui.jface.tableviewer;
+package com.xeviox.commons.ui.eclipse.jface.tableviewer;
 
 import java.util.Comparator;
 import java.util.List;
