@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'osgi'
 
 sourceCompatibility = 1.7
-version = '0.0.1'
+version = '0.0.2'
 
 sourceSets {
     main {
@@ -27,8 +27,14 @@ jar {
 
 repositories {
     mavenCentral()
+    
+    maven {
+    		url "https://swt-repo.googlecode.com/svn/repo/"
+    }
 }
 
 dependencies {
+	compile	"org.eclipse.swt:org.eclipse.swt.gtk.linux.x86_64:4.2.2",
+        	"org.eclipse.ui:org.eclipse.ui.workbench:3.7.1.v20120104-1859"
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
